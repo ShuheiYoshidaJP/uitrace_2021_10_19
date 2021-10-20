@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class RoundBorderButton extends StatelessWidget {
   final Widget? child;
-  final Color textColor;
   final Color borderColor;
   final Color backgroundColor;
   final void Function() onTapped;
@@ -11,7 +10,6 @@ class RoundBorderButton extends StatelessWidget {
   const RoundBorderButton(
       {Key? key,
       required this.child,
-      required this.textColor,
       required this.borderColor,
       required this.backgroundColor,
       required this.onTapped})
@@ -21,10 +19,10 @@ class RoundBorderButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: backgroundColor,
       decoration: BoxDecoration(
         border: Border.all(color: borderColor),
         borderRadius: BorderRadius.circular(10),
+        color: backgroundColor,
       ),
       child: ElevatedButton(
         child: child,
